@@ -5,7 +5,8 @@
 // Business logic
 // one constructor for each play (2 players)
 // create a prototype for rolling dice 
-// create a prototype to keep score during a turn - calls rolling dice until hold or 1 is reached, then calls add score if score is positive
+// create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
+// create a prototype to end turn
 // create a add score protoype (UI logic hold button)
 // create prototype method that randomly generates what player goes first 
 // 

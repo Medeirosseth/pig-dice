@@ -4,18 +4,30 @@ function Players(name, score, total){
   this.name = name;
   this.scoreThisRound = score;
   this.totalScore = total;
-  this.scoreArray = []
+  this.scoreArray = [];
+  this.myTurn = true;
+  this.hold = false;
 }
 
 Players.prototype.rollDice=function(){
- return Math.floor(Math.random() * 6) + 1
+ let number = Math.floor(Math.random() * 6) + 1; {
+  if( number ===1){
+    this.myTurn=false;
+    return number;
+  } else {
+    this.myTurn=true;
+    return number;
+  } 
+}
 };
 
 Players.prototype.endTurn=function(number){
-  if(number===undefined || number===1){
-    return "Pass turn to next player";
-  }
-  return "Roll or hold?"
+  if(number===1){
+    this.scoreThisRound = 0;
+  } else {
+    this.totalScore += this.scoreThisRound;
+    this.scoreThisRound = 0
+  } 
 }
 
 Players.prototype.storeScore=function(number){
@@ -23,10 +35,18 @@ Players.prototype.storeScore=function(number){
   this.scoreThisRound += number;
 }
 
-let player = new Players("John", 0, 0 );
-player.storeScore(5);
-player.storeScore(2);
-console.log(player.scoreThisRound);
+let player = new Players("John", 0, 0);
+//John's turn starts
+let number = player.rollDice(); //get a single dice roll result
+player.storeScore(number); //store that result in ScoreArray and scoreThisRound
+while(player.myTurn && player.hold===false) { //as long as they don't get a 1 and don't decide to hold, keep rolling
+  number = player.rollDice();
+  player.storeScore(number);
+  player.hold=true;  //player choses to hold after second roll
+}
+player.hold=false; //reset hold
+player.endTurn(number) //check if the last number they rolled was a 1. If not, that means you chose 'hold' and the program should add scoreThisRound to your totalScore
+//set other player's turn to true
 
 // create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
 // create a prototype to end turn

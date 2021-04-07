@@ -4,6 +4,7 @@ function Players(name, score, total){
   this.name = name;
   this.scoreThisRound = score;
   this.totalScore = total;
+  this.scoreArray = []
 }
 
 Players.prototype.rollDice=function(){
@@ -17,10 +18,13 @@ Players.prototype.endTurn=function(number){
   return "Roll or hold?"
 }
 
+Players.prototype.storeScore=function(number){
+  this.scoreArray.push(number);
+}
+
 let player = new Players("John", 0, 0 );
-console.log(player.endTurn(1));
-console.log(player.endTurn());
-console.log(player.endTurn(5));
+player.storeScore(2); player.storeScore(4); player.storeScore(6);
+console.log(player.scoreArray);
 
 // create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
 // create a prototype to end turn

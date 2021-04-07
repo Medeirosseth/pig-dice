@@ -21,6 +21,12 @@ console.log(player1.endTurn(1));
 console.log(player1.endturn())
 Expected Output: "Pass turn to next player" * 2
 
+#### Describe: Player.prototype.storeScores()
+Test: "It should store each score of a player during a round and add them together for scoreThisRound total"
+Code: let player = new Players("John", 0, 0 );
+storeScore(2,3,4,5)
+Expected Output: 14
+
 #### Describe: Player.prototype.addScore(button)
 Test: "It should add the Player's scoreThisRound to their totalScore"
 Code: let player = new Players("John", 0, 0 );

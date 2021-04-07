@@ -12,8 +12,8 @@ Code: let player1= new Player();
 console.log(player1.rolldice(), player1.rolldice(), player1.rolldice(), player1.rolldice(), player1.rolldice())
 Expected Output: random numbers from 1 to 6, more than one unique number in results or retest
 
-#### Describe: Player.prototype.endTurn()
-Test: "It should end the player turn if player chooses to hold or rolls a 1. If player rolls 1 or holds, it will return "
+#### Describe: Player.prototype.endTurn() PASSED
+Test: "It should end the player turn if player chooses to hold or rolls a 1. If player rolls 1 or holds, it will return "Pass turn to next player""
 Code: let player1= new Player();
 player1.endTurn(1)
 player1.endTurn()
@@ -22,7 +22,9 @@ console.log(player1.endturn())
 Expected Output: "Pass turn to next player" * 2
 
 #### Describe: Player.prototype.addScore(button)
-Test: "
+Test: "It should add the Player's scoreThisRound to their totalScore"
+Code: let player = new Players("John", 0, 0 );
+console.log(player.addScore());
 
 #### Describe: Player.prototype.updateScoreThisRound(value)
 Test: "It should take a non-1 value and add it to the player's score when the score is zero"

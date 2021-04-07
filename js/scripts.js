@@ -2,21 +2,25 @@
 // one constructor for each play (2 players)
 function Players(name, score, total){
   this.name = name;
-  this.score = score;
-  this.total = total;
+  this.scoreThisRound = score;
+  this.totalScore = total;
 }
-
 
 Players.prototype.rollDice=function(){
  return Math.floor(Math.random() * 6) + 1
 };
 
-let player = new Players("John", 0, 0 );
-console.log("I'm a log!");
-for(i=0; i<10; i++){
-  let result=player.rollDice();
-  console.log(result);
+Players.prototype.endTurn=function(number){
+  if(number===undefined || number===1){
+    return "Pass turn to next player";
+  }
+  return "Roll or hold?"
 }
+
+let player = new Players("John", 0, 0 );
+console.log(player.endTurn(1));
+console.log(player.endTurn());
+console.log(player.endTurn(5));
 
 // create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
 // create a prototype to end turn

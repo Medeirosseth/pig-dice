@@ -57,6 +57,8 @@ let player1 = new Players("John", 0, 0);
 let player2 = new Players("Jane", 0, 0);
 pvp.addPlayer(player1);
 pvp.addPlayer(player2);
+console.log(player1.id);
+console.log(player2.id);
 // //John's turn starts
 // let number = player.rollDice(); //get a single dice roll result
 // player.storeScore(number); //store that result in ScoreArray and scoreThisRound

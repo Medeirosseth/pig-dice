@@ -73,4 +73,13 @@ player1.updateScoreThisRound(3);
 console.log(player1.scoreThisRound);
 Expected Output: 8;
 
-#### Descri
+#### Describe: allPlayer constructor
+Test: "It should return back an unique id for each added player"
+Code: let pvp = new allPlayers();
+let player1 = new Players("John", 0, 0);
+let player2 = new Players("Jane", 0, 0);
+pvp.addPlayer(player1);
+pvp.addPlayer(player2);
+console.log(player1.id);
+console.log(player2.id);
+Expected Output: 1, 2

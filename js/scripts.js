@@ -6,7 +6,24 @@ function Players(name, score, total){
   this.totalScore = total;
   this.scoreArray = [];
   this.myTurn = true;
-  this.hold = false;
+
+
+}
+
+function allPlayers() {
+  this.players = {}
+  this.currentId = 0;
+}
+
+
+allPlayers.prototype.assignId=function(){
+  this.currentId += 1;
+  return this.currentId;
+}
+
+allPlayers.prototype.addPlayer=function(player){
+ player.id = this.assignId();
+ this.players[player.id] = player;
 }
 
 Players.prototype.rollDice=function(){
@@ -35,18 +52,22 @@ Players.prototype.storeScore=function(number){
   this.scoreThisRound += number;
 }
 
-let player = new Players("John", 0, 0);
-//John's turn starts
-let number = player.rollDice(); //get a single dice roll result
-player.storeScore(number); //store that result in ScoreArray and scoreThisRound
-while(player.myTurn && player.hold===false) { //as long as they don't get a 1 and don't decide to hold, keep rolling
-  number = player.rollDice();
-  player.storeScore(number);
-  player.hold=true;  //player choses to hold after second roll
-}
-player.hold=false; //reset hold
-player.endTurn(number) //check if the last number they rolled was a 1. If not, that means you chose 'hold' and the program should add scoreThisRound to your totalScore
-//set other player's turn to true
+let pvp = new allPlayers();
+let player1 = new Players("John", 0, 0);
+let player2 = new Players("Jane", 0, 0);
+pvp.addPlayer(player1);
+pvp.addPlayer(player2);
+// //John's turn starts
+// let number = player.rollDice(); //get a single dice roll result
+// player.storeScore(number); //store that result in ScoreArray and scoreThisRound
+// while(player.myTurn && player.hold===false) { //as long as they don't get a 1 and don't decide to hold, keep rolling
+//   number = player.rollDice();
+//   player.storeScore(number);
+//   player.hold=true;  //player choses to hold after second roll
+// }
+// player.hold=false; //reset hold
+// player.endTurn(number) //check if the last number they rolled was a 1. If not, that means you chose 'hold' and the program should add scoreThisRound to your totalScore
+// //set other player's turn to true
 
 // create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
 // create a prototype to end turn

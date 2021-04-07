@@ -20,11 +20,13 @@ Players.prototype.endTurn=function(number){
 
 Players.prototype.storeScore=function(number){
   this.scoreArray.push(number);
+  this.scoreThisRound += number;
 }
 
 let player = new Players("John", 0, 0 );
-player.storeScore(2); player.storeScore(4); player.storeScore(6);
-console.log(player.scoreArray);
+player.storeScore(5);
+player.storeScore(2);
+console.log(player.scoreThisRound);
 
 // create a prototype to update scoreThisRound during a turn, adding to score or changing it to zero
 // create a prototype to end turn

@@ -4,10 +4,91 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/scripts.js"></script>
   <title>Document</title>
 </head>
 <body>
-  
+  <div class="introduction">
+    <h1>Pig Dice</h1>
+    <p>Rules:</p>
+      <ul>
+        <li>If you roll a 1, your turn ends and you lose your score for the round.</li>
+        <li>If you roll between 2-6, you can decide to roll again or keep your score this round by holding.</li>
+        <li>The first player to 100 wins the game.</li>
+      </ul>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h2 class="gameBoard"><span id="player1">Player1</span></h2>
+        <form>
+          <div class="nameInput">
+            <input type="text" placeholder="Name"><button type="submit" class="btn">submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <h2 class="gameBoard"><span id="player2">Player2</span></h2>
+        <form>
+          <div class="nameInput">
+            <input type="text" placeholder="Name"><button type="submit" class="btn">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6" id="player1ScoreBoard">
+        <div class="gameScore">
+          <h3>Roll Scores:</h3>
+          <h3>Score This Round:</h3>
+          <h3>Total Score:</h3>
+        </div>
+      </div>
+      <div class="col-6" id="player2ScoreBoard">
+        <div class="gameScore">
+          <h3>Roll Scores:</h3>
+          <h3>Score This Round:</h3>
+          <h3>Total Score:</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1><span</h1>
+      </div>
+    </div>
+  </div>    
+  <div class="container" id="permanentButtons">
+    <div class="row">
+      <div class="col-12">
+        <button type="button" id="rollDice">Roll</button>
+        <button type="button" id="hold">Hold</button>
+      </div>
+    </div>
+  </div>    
 </body>
 </html>
+
+<!-- 
+  display Pig Dice in header
+  display how game is played / rules
+Name input + button //// hide submit input and button once mname has been submitted
+2 col
+roll dice button
+hold button/pass turn
+display in turn rolls + total of score (this round)
+display total score
+
+
+-->
+
+      <!-- <div class="gameBoard">
+
+      </div>  (existed in line 23-25)--> 
+      

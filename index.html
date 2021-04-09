@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/scripts.js"></script>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>  
   <title>Document</title>
 </head>
 <body>
@@ -21,19 +22,18 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        <h2 class="gameBoard"><span id="player1">Player1</span></h2>
-        <form>
+      <div class="col-6 player1Border">
+        <h2 class="gameBoard">Player 1</h2>
+        <form id="formName">
           <div class="nameInput">
-            <input type="text" placeholder="Name"><button type="submit" class="btn">submit</button>
+            <input type="text" id="playerName1" placeholder="Name">
+            <button type="submit" class="btn">submit</button>
           </div>
-        </form>
       </div>
-      <div class="col-6">
-        <h2 class="gameBoard"><span id="player2">Player2</span></h2>
-        <form>
+      <div class="col-6 player2Border">
+        <h2 class="gameBoard">Player 2</h2>
           <div class="nameInput">
-            <input type="text" placeholder="Name"><button type="submit" class="btn">submit</button>
+            <input type="text" id="playerName2" placeholder="Name"><button type="submit" class="btn">submit</button>
           </div>
         </form>
       </div>
@@ -43,13 +43,15 @@
     <div class="row">
       <div class="col-6" id="player1ScoreBoard">
         <div class="gameScore">
-          <h3>Roll Scores:</h3>
-          <h3>Score This Round:</h3>
-          <h3>Total Score:</h3>
+          <h3>Name: <span id="player1"></span></h3>
+          <h3>Roll Scores: <span id="scoreArray"></span></h3>
+          <h3>Score This Round: <span id="scoreThisRound"></span></h3>
+          <h3>Total Score: <span id="totalScore"></span></h3>
         </div>
       </div>
       <div class="col-6" id="player2ScoreBoard">
         <div class="gameScore">
+          <h3>Name: <span id="player2"></span></h3>
           <h3>Roll Scores:</h3>
           <h3>Score This Round:</h3>
           <h3>Total Score:</h3>

@@ -22,15 +22,25 @@ ul{
   padding-left: 10%;
 }
 
-.nameInput{
+/* .nameInput{
   display:none;
-}
+} */
 
 #permanentButtons{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.player1Border {
+  border: 5px solid green;
+}
+
+.player2Border {
+  border: 5px solid green;
+}
+ /* display: none; */
+
 
 /* display: flex;
 justify-content: center;
